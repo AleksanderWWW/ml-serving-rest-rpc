@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package model;
+
+service ModelService {
+  rpc Predict (PredictRequest) returns (PredictResponse);
+}
+
+message PredictRequest {
+  float x1 = 1;
+  float x2 = 2;
+}
+
+message PredictResponse {
+  float result = 1;
+}
