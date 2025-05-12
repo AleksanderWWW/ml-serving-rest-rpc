@@ -21,6 +21,6 @@ def super_profitable_model(year_born: int) -> int:
 @app.get("/model")
 def model(year_born: int):
     result = super_profitable_model(year_born)
-    is_old = (result > 26)
+    is_old = result > 26
 
     return {"age": result, "is_old": is_old}

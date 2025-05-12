@@ -4,9 +4,10 @@ isort:skip_file
 """
 
 import builtins
+import typing
+
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -24,7 +25,9 @@ class PredictRequest(google.protobuf.message.Message):
         x1: builtins.float = ...,
         x2: builtins.float = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["x1", b"x1", "x2", b"x2"]) -> None: ...
+    def ClearField(
+        self, field_name: typing.Literal["x1", b"x1", "x2", b"x2"]
+    ) -> None: ...
 
 global___PredictRequest = PredictRequest
 

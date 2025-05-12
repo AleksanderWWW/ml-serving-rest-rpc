@@ -1,8 +1,7 @@
-import joblib
-
 from pathlib import Path
 
 import fastapi
+import joblib
 import numpy as np
 from pydantic import BaseModel
 

@@ -1,11 +1,10 @@
 from concurrent import futures
-import joblib
-
 from pathlib import Path
+
 import grpc
+import joblib
 import model_pb2
 import model_pb2_grpc
-
 import numpy as np
 
 
@@ -24,11 +23,11 @@ class ModelService(model_pb2_grpc.ModelServiceServicer):
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     model_pb2_grpc.add_ModelServiceServicer_to_server(ModelService(), server)
-    server.add_insecure_port('[::]:50051')
+    server.add_insecure_port("[::]:50051")
     print("gRPC server is running on port 50051...")
     server.start()
     server.wait_for_termination()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     serve()
