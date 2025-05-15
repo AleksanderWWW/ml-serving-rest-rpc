@@ -20,11 +20,11 @@ class ModelService(model_pb2_grpc.ModelServiceServicer):
 
 
 # Start the server
-def serve():
+def serve() -> None:
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     model_pb2_grpc.add_ModelServiceServicer_to_server(ModelService(), server)
-    server.add_insecure_port("[::]:50051")
-    print("gRPC server is running on port 50051...")
+    server.add_insecure_port("localhost:50051")
+    print("gRPC server is running on localhost:50051...")
     server.start()
     server.wait_for_termination()
 
