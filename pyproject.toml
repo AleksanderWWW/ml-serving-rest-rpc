@@ -1,9 +1,9 @@
 [project]
 name = "ml-serving-rest-rpc"
 version = "0.1.0"
-description = "Add your description here"
+description = "The companion code for the SGH student club presentatione"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 dependencies = [
     "fastapi[standard]>=0.115.12",
     "grpcio-tools>=1.71.0",
